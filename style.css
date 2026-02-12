@@ -1,0 +1,176 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  transition: background 0.4s;
+}
+
+body.dark {
+  background: #121212;
+}
+
+.app {
+  width: 400px;
+  background: rgba(255,255,255,0.95);
+  padding: 20px;
+  border-radius: 16px;
+  transition: background 0.4s, color 0.4s;
+}
+
+body.dark .app {
+  background: #1e1e1e;
+  color: white;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-wrap {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.logo-circle {
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, #4caf50, #81c784);
+  border-radius: 50%;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-text {
+  margin: 0;
+  font-size: 28px;
+  background: linear-gradient(90deg, #4caf50, #81c784);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tagline {
+  margin: 0;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+#theme-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.progress-box {
+  width: 100%;
+  height: 10px;
+  background: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 15px 0 5px;
+}
+
+#progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #4caf50;
+  transition: width 0.3s ease;
+}
+
+#progress-text {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+form {
+  display: flex;
+  gap: 8px;
+  margin: 15px 0;
+}
+
+input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  background: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #f1f1f1;
+  margin-bottom: 8px;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  animation: slideIn 0.25s ease;
+}
+
+body.dark li {
+  background: #2a2a2a;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #4caf50;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkbox.checked::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: #4caf50;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  animation: pop 0.2s ease;
+}
+
+@keyframes pop {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+
+.time {
+  font-size: 11px;
+  opacity: 0.6;
+}

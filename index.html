@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Donezo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app">
+
+    <header class="header">
+      <div class="logo-wrap">
+        <div class="logo-circle">✓</div>
+        <div>
+          <h1 class="logo-text">Donezo</h1>
+          <p class="tagline">Get it done. Stay in flow.</p>
+        </div>
+      </div>
+      <button id="theme-btn">🌙</button>
+    </header>
+
+    <div class="progress-box">
+      <div id="progress-bar"></div>
+    </div>
+    <p id="progress-text">0% Completed</p>
+
+    <form id="task-form">
+      <input id="task-input" placeholder="Add a task..." />
+      <button>Add</button>
+    </form>
+
+    <h3>Active</h3>
+    <ul id="active-list"></ul>
+
+    <h3>Completed</h3>
+    <ul id="completed-list"></ul>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
