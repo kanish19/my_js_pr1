@@ -59,8 +59,11 @@ body.dark .app {
   margin: 0;
   font-size: 28px;
   background: linear-gradient(90deg, #4caf50, #81c784);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  .my-class {
+  -webkit-background-clip: text; /* for Safari / Chrome */
+  background-clip: text;         /* standard property for compatibility */
+}
+
 }
 
 .tagline {
@@ -173,4 +176,140 @@ body.dark li {
 .time {
   font-size: 11px;
   opacity: 0.6;
+}
+.task {
+  position: relative;
+  overflow: hidden;
+}
+
+/* hidden by default */
+.delete-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 70px;
+  background: red;
+  color: white;
+  border: none;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+/* slide content left */
+.task.completed.swipe-left {
+  transform: translateX(-70px);
+}
+
+/* show delete */
+.task.completed.swipe-left .delete-btn {
+  transform: translateX(0);
+}
+.task-item {
+  position: relative;
+}
+
+.delete-btn {
+  .delete-btn {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.delete-btn:hover {
+  background: #e63c3c;
+}
+
+.task-item.show-delete .delete-btn {
+  transform: translateY(-50%) scale(1);
+}
+
+}
+
+.task-item.show-delete .delete-btn {
+  transform: translateY(-50%) scale(1);
+}
+/* ===== Swipe Delete Icon ===== */
+.task-item {
+  position: relative;
+}
+
+.delete-btn {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  opacity: 0;
+}
+
+.task-item.show-delete .delete-btn {
+  transform: translateY(-50%) scale(1);
+  opacity: 1;
+}
+
+/* subtle feedback */
+.task-item.show-delete {
+  box-shadow: inset 3px 0 0 #ff4d4d;
+}
+.delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: auto;
+}
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.task-content {
+  flex: 1;
+}
+
+.delete-btn {
+  cursor: pointer;
+  font-size: 18px;
+  padding: 4px;
+}
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.task-content {
+  flex: 1;
+}
+
+.task-actions span {
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: 8px;
 }
